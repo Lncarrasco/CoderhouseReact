@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "producto": "Remera blanca",
+    "precio": "1200",
+    "img": "../images/remerablanca.jpg",
+    "stock": "5"
+  },
+  {
+      "id": "2",
+      "producto": "Remera bordo",
+      "precio": "1500",
+      "img": "../images/remerabordo.jpg",
+      "stock": "3"
+    },
+    {
+      "id": "3",
+      "producto": "Remera gris",
+      "precio": "1400",
+      "img": "../images/remeragris.jpg",
+      "stock": "8" 
+    }
+]

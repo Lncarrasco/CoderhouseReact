@@ -1,11 +1,15 @@
 import CartWidget from "./CartWidget"
+import logoTienda from "./images/logoNavbar.svg"
+
+const logo = <img src={logoTienda} alt="logotienda" style={{width: '50px'}}/>
 
 export const NavBar = () => {
     return (
+        <>
         <div>
             <nav className="navbar navbar-expand-lg">
                 <div className="container-fluid">
-                    <img src={require("./images/logo.svg").default} width="50" height="50" />
+                    {logo}
                     <a className="navbar-brand" href="#">Eclipse Indumentaria</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -31,5 +35,7 @@ export const NavBar = () => {
                 <CartWidget />
             </nav>
         </div>
+        
+        </>
     )
 }
