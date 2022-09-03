@@ -21,6 +21,7 @@ const ItemCount = ({stock}) => {
                     <button disabled={counter==1} onClick={onClick}  type="button" className="btn btn-secondary" style={{"width" : '15%'}}> - </button>
                     <div><h5 style={{'text-align' : 'center', 'margin' : '0 20px' }}> {counter} </h5></div>
                     <button disabled={counter==stock} onClick={handleClick} type="button" className="btn btn-primary" style={{"width" : '15%'}}> + </button>
+                    <button type="button" className="btn btn-primary" style={{"width" : '50%', 'margin-left' : '10px'}}> Comprar </button>
                 </div>
             </div>
         </>

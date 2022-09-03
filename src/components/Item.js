@@ -12,6 +12,7 @@ const Item = ({ producto, img, precio, stock }) => {
           <h5>{producto}</h5>
           <p>${precio}</p>
           <ItemCount stock={stock}/>
+          
         </div>
       </div>
       </div>
