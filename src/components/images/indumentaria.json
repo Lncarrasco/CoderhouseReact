@@ -6,7 +6,7 @@
     "img": "../images/remerablanca.jpg",
     "stock": "5",
     "divisa": "$",
-    "descripcion": " Remera: Lisa, Color: blanco, Mangas cortas, ruedo clásico"
+    "descripcion": ".........."
   },
   {
       "id": "2",
@@ -15,7 +15,7 @@
       "img": "../images/remerabordo.jpg",
       "stock": "3",
       "divisa": "$",
-      "descripcion": " Remera: Lisa, Color: bordo, Mangas cortas, ruedo clásico"
+      "descripcion": "............."
     },
     {
       "id": "3",
@@ -24,6 +24,6 @@
       "img": "../images/remeragris.jpg",
       "stock": "8",
       "divisa": "$",
-      "descripcion": " Remera: Lisa, Color: gris, Mangas cortas, ruedo clásico"
+      "descripcion": "........"
     }
 ]
