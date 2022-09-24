@@ -1,47 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-
-
-import indumentariaJson from "../indumentaria.json";
-import ItemDetail from "./ItemDetail"
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import ItemDetail from "./ItemDetail";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
-  const [indumentaria, setIndumentaria] = useState([])
-  const { id } = useParams()
+	const [data, setData] = useState({});
+	const { detalleId } = useParams();
 
-  const getIndumentaria = (data, time) => new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (data) {
-        resolve(data.find(i => i.id === id))
-      } else {
-        reject("Error")
-      }
-    }, time);
-  });
+	useEffect(() => {
+		const querydb = getFirestore();
+		const queryDoc = doc(querydb, "items", detalleId);
+		getDoc(queryDoc).then((res) => setData({ id: res.id, ...res.data() }));
+	}, [detalleId]);
 
-  useEffect(() => {
-    getIndumentaria(indumentariaJson, 2000)
-      .then((res) => {
-        setIndumentaria(res)
-      })
-      .catch((err) => console.log(err, ": No hay productos"));
-  }, []);
+	return <ItemDetail data={data} />;
+};
 
-  return (
-    <div>
-
-        <div className='card mb-3' style={{ "width": "auto", "margin": "15px" }}>
-
-          <ItemDetail indumentarias={indumentaria} />
-
-        </div>
-
-
-
-    </div>
-
-
-  )
-}
-
-export default ItemDetailContainer
+export default ItemDetailContainer;

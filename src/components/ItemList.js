@@ -1,14 +1,15 @@
-import React from 'react';
-import Item from './Item';
+import React from "react";
+import Item from "./Item";
+
+const ItemList = ({ data = [] }) => {
 
 
-const ItemList = ({ indumentarias }) => {
   return (
     <div>
 
-      <div className='row justify-content-center'>
+      <div className='row col-12'>
 
-        {indumentarias.length ? (indumentarias.map((item) => <Item key={item.id} {...item} />)
+        {data.length ? (data.map((item) => <Item key={item.id} items={item} />)
         ) : (
           <h3>Cargando productos...</h3>
         )}
@@ -17,6 +18,6 @@ const ItemList = ({ indumentarias }) => {
 
 
   )
-}
+};
 
-export default ItemList
+export default ItemList;

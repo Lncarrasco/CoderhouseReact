@@ -13,22 +13,3 @@ a:hover {
   color: #000000;
   text-decoration: none;
 }
-.navbar {
-  background: rgb(211, 211, 211);
-}
-
-.navbar-nav {
-  margin-left: 35%;
-}
-
-.navbar-brand{
-  font-weight: bold;
-}
-
-ul li a{
-  text-decoration: none;
-}
-
-a.nav-link.active{
-  color: #000000;
-}

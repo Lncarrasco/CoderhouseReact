@@ -1,0 +1,47 @@
+.navbar {
+    background: rgb(255, 255, 255);
+}
+
+.navbar-nav {
+    margin-left: 35%;
+}
+
+.navbar h1 {
+    font-family: Impact;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+    margin-left: 10px;
+}
+
+.navbar p {
+    font-family: "Montserrat", Sans-serif;
+    font-size: 11px;
+    font-style: italic;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    margin: 20px 3px 9px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+ul li a {
+
+    font-family: "Montserrat", Sans-serif;
+    font-size: 11px;
+    font-style: italic;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+a.nav-link.active {
+    color: #000000;
+}

@@ -1,40 +1,40 @@
-import React, { useEffect, useState } from 'react';
-import indumentariaJson from "../indumentaria.json";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
+import {collection, getDocs, getFirestore, query, where} from "firebase/firestore";
 
 
-
-const ItemListContainer = () => {
-
-  const [indumentaria, setIndumentaria] = useState([])
-  const getIndumentaria = (data, time) => new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (data) {
-        resolve(data)
-      } else {
-        reject("Error")
-      }
-    }, time);
-  });
+export const ItemListContainer = ({}) => {
+  const [data, setData] = useState([]);
+  const { categoriaId } = useParams();
 
   useEffect(() => {
-    getIndumentaria(indumentariaJson, 2000).then((res) => {
-      setIndumentaria(res)
-    }).catch((err) => console.log(err, ": No hay productos"));
-  }, []);
-
-
+    const querydb = getFirestore();
+    const queryCollection = collection(querydb, "items");
+    if (categoriaId) {
+      const queryFilter = query(
+        queryCollection,
+        where("categoria", "==", categoriaId),
+      );
+      getDocs(queryFilter).then((res) =>
+        setData(
+          res.docs.map((items) => ({ id: items.id, ...items.data() })),
+        ),
+      );
+    } else {
+      getDocs(queryCollection).then((res) =>
+        setData(
+          res.docs.map((items) => ({ id: items.id, ...items.data() })),
+        ),
+      );
+    }
+  }, [categoriaId]);
 
   return (
-    <div>
-      
+    <>
+      <ItemList data={data} />
+    </>
+  );
+};
 
-        <ItemList indumentarias={indumentaria} />
-
-      
-
-    </div>
-  )
-}
-
-export default ItemListContainer
+export default ItemListContainer;
