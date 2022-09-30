@@ -26,7 +26,8 @@ const Cart = () => {
 
         </div>
           <div className='card mb-3 col-md-5'>
-            <p>Total: {totalPrice()}</p>
+            <p>Total: ${totalPrice()}</p>
+            <Link to="/cart/checkout"><button class="btn btn-outline-primary"> IR AL PAGO </button></Link>
           </div>
 
       </div>

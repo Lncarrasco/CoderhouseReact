@@ -15,7 +15,7 @@ const ItemCart = ({ product }) => {
             <div className="card-body">
               <h5 className="card-title">{product.producto}</h5>
               <p className="card-text">Cantidad: {product.quantity}</p>
-              <p className="card-text">Precio: {product.precio}</p>
+              <p className="card-text">Precio: ${product.precio}</p>
               <p className="card-text">Subtotal: ${product.quantity * product.precio}</p>
               <button onClick={() => removeProduct(product.id)} className="btn btn-secondary"><p className="card-text"><small >Eliminar</small></p></button>
 
