@@ -27,10 +27,7 @@ export const NavBar = () => {
                             <Link to={'/indumentaria'} className="nav-link active">Indumentaria</Link>
                             </li>
                             <li className="nav-item">
-                            <Link to={'/Accesorios'} className="nav-link active">Accesorios</Link>
-                            </li>
-                            <li className="nav-item">
-                            <Link to={'/About'} className="nav-link active">About</Link>
+                            <Link to={'/Ayuda'} className="nav-link active">Ayuda</Link>
                             </li>
                         </ul>
                     </div>

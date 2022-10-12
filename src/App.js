@@ -7,6 +7,8 @@ import Cart from "./components/Cart";
 import { Inicio } from './components/Inicio'
 import "./App.css";
 import Checkout from "./components/Checkout";
+import Ayuda from "./components/Ayuda";
+
 
 function App() {
   return (
@@ -14,7 +16,9 @@ function App() {
       <CartProvider>
         <NavBar />
         <Routes>
-          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/" element={<Inicio />} />
+          <Route path="/Inicio" element={<Inicio/>} />
+          <Route path="/Ayuda" element={<Ayuda />} />
           <Route path="/indumentaria" element={<ItemListContainer />} />
           <Route path="/categoria/:categoriaId" element={<ItemListContainer />} />
           <Route path="/cart" element={<Cart />} />
